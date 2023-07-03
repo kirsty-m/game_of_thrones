@@ -29,7 +29,7 @@ useEffect (() => {
 
     return (
         <>
-        <h1>Game of Thrones!</h1>
+        <h1>Select a House of Westeros</h1>
         <HouseSelector houses={houses} onHouseSelector={handleHouseSelected}/>
         <House house={selectedHouse}/>
         </>

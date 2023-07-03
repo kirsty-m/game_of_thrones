@@ -1,18 +1,22 @@
 import React from 'react'
+import HouseItem from './HouseItem';
 
-const House = ({house}) => {
+const House = ({house, onHouseClicked}) => {
 
     if(!house){
         return null}
     
+    const characterItems = house.members.map((house, slug) => {
+        return <HouseItem house={house} key={slug} onHouseClicked={onHouseClicked}/>
+    })
+    
 
     return (
         <>
-        <h2>House: {house.name}</h2>
-        <h2>Character: {house.members.name}</h2>
-        <div>HouseDetail
-            The {house.name} includes {house.members.name}
-        </div>
+        <h2>{house.name}</h2>
+        <ul>
+        {characterItems}
+        </ul>
         </>
     )
 };
