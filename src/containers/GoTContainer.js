@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './GoTContainer.css'
 import HouseSelector from '../components/HouseSelector';
 import House from '../components/House';
+import FavouriteHouse from '../components/FavouriteHouse';
 
 
 const GoTContainer = () => {
@@ -23,6 +24,15 @@ useEffect (() => {
         setSelectedHouseSlug(slug)
     }
 
+    const handleFavouriteHouse = (slug) => {
+        const updatedHouses = houses.map((house) => {
+            return house.slug === slug
+            ? {...house, isFavourite: !house.isFavourite}
+            : house
+        })
+        setHouses(updatedHouses)
+    };
+
     const selectedHouse = houses.find(house => house.slug === selectedHouseSlug)
       
     
@@ -31,7 +41,8 @@ useEffect (() => {
         <>
         <h1>Select a House of Westeros</h1>
         <HouseSelector houses={houses} onHouseSelector={handleHouseSelected}/>
-        <House house={selectedHouse}/>
+        <House house={selectedHouse} onFavouriteHouse={handleFavouriteHouse}/>
+        <FavouriteHouse houses={houses} onHouseSelected={handleHouseSelected}/>
         </>
     )
 };
