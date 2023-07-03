@@ -7,6 +7,15 @@ import FavouriteHouse from '../components/FavouriteHouse';
 
 const GoTContainer = () => {
 
+//     const audio = new Audio('./public/assets/Voicy_Game of Thrones - Winter is Coming Compilation.mp3');
+//     const button = document.querySelectorAll("button");
+  
+//     button.forEach(button => {
+//     button.addEventListener("click", () => {
+//       audio.play();
+//     });
+//   });
+
     const [houses, setHouses] = useState([]);
     const [selectedHouseSlug, setSelectedHouseSlug] = useState('');
 
@@ -34,6 +43,8 @@ useEffect (() => {
     };
 
     const selectedHouse = houses.find(house => house.slug === selectedHouseSlug)
+
+
       
     
 
@@ -43,6 +54,7 @@ useEffect (() => {
         <HouseSelector houses={houses} onHouseSelector={handleHouseSelected}/>
         <House house={selectedHouse} onFavouriteHouse={handleFavouriteHouse}/>
         <FavouriteHouse houses={houses} onHouseSelected={handleHouseSelected}/>
+        <a href='http://atlasofthrones.com' id='westeros'>Visit Westeros</a>
         </>
     )
 };

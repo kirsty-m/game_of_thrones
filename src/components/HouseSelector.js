@@ -8,7 +8,7 @@ const HouseSelector = ({houses, onHouseSelector}) => {
     }
 
     return(
-        <select defaultValue='' onChange={handleChange}>
+        <select id='dropdown' defaultValue='' onChange={handleChange}>
         <option>Choose House</option>
         {houses.map(house => {
             return(

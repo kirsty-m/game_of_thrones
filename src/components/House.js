@@ -14,16 +14,18 @@ const House = ({house, onHouseClicked, onFavouriteHouse}) => {
       onFavouriteHouse(house.slug)
     }
 
-    const favouriteHouseBtnText = house.isFavourite ? 'Remove from favourites' : 'Add to favourites'
+    const favouriteHouseBtnText = house.isFavourite ? 'Declare War' : 'Form an Alliance'
     
 
     return (
         <>
+        <div id='house-info'>
         <h2>{house.name}</h2>
         <button onClick={handleClick}>{favouriteHouseBtnText}</button>
         <ul>
         {characterItems}
         </ul>
+        </div>
         </>
     )
 };
