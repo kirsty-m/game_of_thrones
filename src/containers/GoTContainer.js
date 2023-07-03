@@ -23,7 +23,7 @@ useEffect (() => {
         setSelectedHouseSlug(slug)
     }
 
-    const selectedHouse = houses.find(house => house.name === selectedHouseSlug)
+    const selectedHouse = houses.find(house => house.slug === selectedHouseSlug)
       
     
 

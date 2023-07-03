@@ -2,7 +2,7 @@ import React from 'react'
 
 const HouseSelector = ({houses, onHouseSelector}) => {
 
-    const handleChange = (event) => {
+    const handleChange = event => {
         onHouseSelector(event.target.value)
         
     }
