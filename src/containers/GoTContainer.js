@@ -7,14 +7,7 @@ import FavouriteHouse from '../components/FavouriteHouse';
 
 const GoTContainer = () => {
 
-//     const audio = new Audio('./public/assets/Voicy_Game of Thrones - Winter is Coming Compilation.mp3');
-//     const button = document.querySelectorAll("button");
-  
-//     button.forEach(button => {
-//     button.addEventListener("click", () => {
-//       audio.play();
-//     });
-//   });
+
 
     const [houses, setHouses] = useState([]);
     const [selectedHouseSlug, setSelectedHouseSlug] = useState('');
